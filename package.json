@@ -1,0 +1,22 @@
+{
+  "name": "plumier-sql-vue-starter",
+  "version": "1.0.0",
+  "description": "monorepo of plumier and vue",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^4.1.1"
+  },
+  "scripts": {
+    "build:server":"yarn workspace server build",
+    "build:ui-android":"yarn workspace ui build",
+    "start:ui": "yarn workspace ui serve",
+    "start:server": "yarn workspace server start",
+    "start": "concurrently \"yarn start:ui\" \"yarn start:server\"",
+    "build":"yarn build:server"
+  }
+}
